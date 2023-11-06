@@ -71,8 +71,6 @@ import { useState } from "react";
 interface ICreate{
     title : string,
     content : string,
-    bulletins : [];
-    newBulletin : {};
 }
 
 const theme = extendTheme({
