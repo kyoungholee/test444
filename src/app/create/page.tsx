@@ -62,16 +62,11 @@
 //     </form>
 //   )
 // }
-
+'use client'
 
 import { ChakraProvider, ColorModeScript, Box, Heading, VStack, Input, Textarea, Button, Text } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
 import { useState } from "react";
-
-interface ICreate{
-    title : string,
-    content : string,
-}
 
 const theme = extendTheme({
   config: {
@@ -80,10 +75,15 @@ const theme = extendTheme({
   },
 });
 
+interface ICreate{
+  title : string;
+  content: string;
+}
+
 export default function CreatePage() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [bulletins, setBulletins] = useState<T>([]);
+  const [bulletins, setBulletins] = useState<ICreate[]>([]);
 
   const handleCreateBulletin = () => {
     if (title && content) {
